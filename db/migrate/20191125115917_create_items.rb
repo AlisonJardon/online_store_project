@@ -7,6 +7,8 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :img_url
 
       t.timestamps
+
+      
     end
   end
 end

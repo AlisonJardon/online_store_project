@@ -686,3 +686,199 @@ Processing by Devise::PasswordsController#new as HTML
 Completed 200 OK in 72ms (Views: 69.2ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (225.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "online_store_project_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (226.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "online_store_project_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (708.5ms)[0m  [1m[35mCREATE DATABASE "online_store_project_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (822.4ms)[0m  [1m[35mCREATE DATABASE "online_store_project_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (72.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (51.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1155478049868389625)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateItems (20191125115917)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1155478049868389625)[0m
+  ↳ bin/rails:9
+  [1m[35m (80.9ms)[0m  [1m[35mCREATE DATABASE "online_store_project_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE DATABASE "online_store_project_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1155478049868389625)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateItems (20191125115917)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (85.8ms)[0m  [1m[35mCREATE TABLE "items" ("id" bigserial primary key, "title" character varying, "description" text, "price" decimal, "img_url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191125115917_create_items.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191125115917"]]
+  ↳ bin/rails:9
+  [1m[35m (38.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateUsers (20191125123512)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (76.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191125123512_devise_create_users.rb:5
+  [1m[35m (42.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20191125123512_devise_create_users.rb:40
+  [1m[35m (98.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20191125123512_devise_create_users.rb:41
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191125123512"]]
+  ↳ bin/rails:9
+  [1m[35m (52.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCarts (20191125151234)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (80.3ms)[0m  [1m[35mCREATE TABLE "carts" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191125151234_create_carts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191125151234"]]
+  ↳ bin/rails:9
+  [1m[35m (28.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateOrders (20191125151440)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (41.9ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191125151440_create_orders.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191125151440"]]
+  ↳ bin/rails:9
+  [1m[35m (17.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-25 16:22:05.550773"], ["updated_at", "2019-11-25 16:22:05.550773"]]
+  ↳ bin/rails:9
+  [1m[35m (17.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(1155478049868389625)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (54.3ms)[0m  [1m[35mTRUNCATE items[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (102.7ms)[0m  [1m[35mTRUNCATE users[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (34.4ms)[0m  [1m[35mTRUNCATE carts[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (36.0ms)[0m  [1m[35mTRUNCATE orders[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "colton.emard@yopmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "colton.emard@yopmail.com"], ["encrypted_password", "$2a$11$/Mq1BrSHe4b8vHS7X8ztK.U69TEpz9UyD8sJgjQp0rSMqYhR1.RvC"], ["created_at", "2019-11-25 16:23:40.218011"], ["updated_at", "2019-11-25 16:23:40.218011"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (11.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "luise.bernier@yopmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "luise.bernier@yopmail.com"], ["encrypted_password", "$2a$11$NqyRXMoneh583BTr9e9fXeeQsXj0tUnKgNyNH5fYdPxMJnOBOG/nG"], ["created_at", "2019-11-25 16:23:40.371323"], ["updated_at", "2019-11-25 16:23:40.371323"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "teddy.purdy@yopmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "teddy.purdy@yopmail.com"], ["encrypted_password", "$2a$11$s7qTm/VSIycxdc1hrdkGRelOo8fkWZqK2dA8pyjY3kzvLE67HlaDS"], ["created_at", "2019-11-25 16:23:40.511759"], ["updated_at", "2019-11-25 16:23:40.511759"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "olinda.howe@yopmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "olinda.howe@yopmail.com"], ["encrypted_password", "$2a$11$pdhSr8GI1n1FEhJ160RaZO7rbg1sCqAHCOR4PzV4bqyUwEu1Ic7m2"], ["created_at", "2019-11-25 16:23:40.658995"], ["updated_at", "2019-11-25 16:23:40.658995"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "todd.towne@yopmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "todd.towne@yopmail.com"], ["encrypted_password", "$2a$11$Uu7SO.lY45YCRzFTsILxI.FkD0.UxqOLO7GdkIr5mt6bpUxXsb1ay"], ["created_at", "2019-11-25 16:23:40.803802"], ["updated_at", "2019-11-25 16:23:40.803802"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "miesha.prohaska@yopmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "miesha.prohaska@yopmail.com"], ["encrypted_password", "$2a$11$z.Cg4BwqZBeSGdw/3kG.4OtRlTVazLUa1YdthjT5rCr12dTmLd2ai"], ["created_at", "2019-11-25 16:23:40.952077"], ["updated_at", "2019-11-25 16:23:40.952077"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (11.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "svetlana.lindgren@yopmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "svetlana.lindgren@yopmail.com"], ["encrypted_password", "$2a$11$K6xOVdiDu/eS/alo7HSC..eRO..ccjZp/r5AlxIK6oBqis0hK7XEC"], ["created_at", "2019-11-25 16:23:41.105791"], ["updated_at", "2019-11-25 16:23:41.105791"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (13.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "latanya.moore@yopmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "latanya.moore@yopmail.com"], ["encrypted_password", "$2a$11$UQw39mDbJDeMNBoFxxKbKexkpnPXPyVDUVK5HOYXTZbBwYNleK656"], ["created_at", "2019-11-25 16:23:41.263546"], ["updated_at", "2019-11-25 16:23:41.263546"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (101.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "starr.king@yopmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "starr.king@yopmail.com"], ["encrypted_password", "$2a$11$MIrq5NwaLJcjDOVW97VXeepIgGVFayuONHGPXdMj0MjOMVnRqHGVS"], ["created_at", "2019-11-25 16:23:41.506783"], ["updated_at", "2019-11-25 16:23:41.506783"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (13.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "wallace.wunsch@yopmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "wallace.wunsch@yopmail.com"], ["encrypted_password", "$2a$11$5cyrkbJqlVt2t8O.kiFkaeZVxf/BQhmrFmix6A5Aukh7PfKLPc/bO"], ["created_at", "2019-11-25 16:23:41.661387"], ["updated_at", "2019-11-25 16:23:41.661387"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-11-25 17:24:28 +0100
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/marceline/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (209.4ms)
+Completed 200 OK in 452ms (Views: 421.1ms | ActiveRecord: 6.3ms)
+
+
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
